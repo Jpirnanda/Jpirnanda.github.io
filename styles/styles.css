@@ -1,0 +1,385 @@
+html,
+body {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body::before {
+  content: '';
+  background-image: url('https://techhub.dev.br/LinkZap/src/bg.jfif');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+h1 {
+  font-family: 'Heebo', sans-serif;
+  font-weight: lighter;
+  font-size: 12vh;
+  color: #000;
+  text-align: center;
+  margin-top: 0;
+  line-height: 1;
+}
+
+#link-input,
+#link-input2 {
+  width: 500px;
+  height: 50px;
+  font-size: 19px;
+  font-family: 'Circe', sans-serif;
+  color: #333;
+  background-color: #fefefe;
+  border-radius: 25px;
+  border: 5px solid #36897f;
+  display: block;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+}
+
+#link-input2 {
+  border-radius: 0px 25px 25px 0px;
+  border-width: 5px 5px 5px 0px;
+  width: 55%;
+}
+
+.input-wrapper {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#link-input::placeholder {
+  color: #999;
+}
+
+#link-input2::placeholder {
+  color: #999;
+}
+
+.logo {
+  font-family: 'Chewy', cursive;
+  font-weight: normal;
+  font-size: 10vh;
+  color: #000;
+  display: inline-block;
+  margin-left: 0;
+  padding: 0;
+  font-display: swap;
+}
+
+.logo-green {
+  color: #36897f;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.custom-button {
+  cursor: pointer;
+  background-color: #36897f;
+  border-radius: 25px;
+  border: none;
+  color: #fefefe;
+  font-family: 'Circe', sans-serif;
+  font-size: 14px;
+  padding: 2px 30px 2px;
+  transition: background-color 0.3s ease-in-out;
+  height: 40px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.custom-button::before,
+.custom-button::after {
+  content: '';
+}
+
+.custom-button:hover {
+  background-color: #2b6c63;
+}
+
+.custom-button:active {
+  background-color: #2c6e61;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.imagem {
+  position: absolute;
+  width: auto;
+  height: auto;
+  color: #2b6c63;
+}
+
+.novo-texto {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#short-url {
+  cursor: pointer;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto;
+  color: blue;
+  text-decoration: underline;
+}
+
+#short-url:hover {
+  cursor: pointer;
+}
+
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.imgFooter {
+  bottom: -5%;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+#zap1 {
+  left: 19vw;
+  top: 60vh;
+  font-size: 6vw;
+}
+
+#zap2 {
+  left: 13vw;
+  top: 60vh;
+  font-size: 4.2vw;
+  transform: rotate(-83.3deg);
+}
+
+#zap3 {
+  left: 10vw;
+  top: 56vh;
+  font-size: 3vw;
+  transform: rotate(40deg);
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  display: flex;
+}
+
+.element {
+  margin-right: 20px;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70vw;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 9999;
+  border-width: 1px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.popup button {
+  background-color: #36897f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #1b685f;
+}
+
+select {
+  -webkit-appearance: none;
+  /* Para navegadores WebKit (Chrome, Safari, etc.) */
+  -moz-appearance: none;
+  /* Para navegadores Mozilla (Firefox) */
+  appearance: none;
+  /* Para outros navegadores */
+
+  background-color: white;
+}
+
+#drop-list {
+  width: auto;
+  height: 50px;
+  font-size: 19px;
+  font-family: 'Circe', sans-serif;
+  color: #333;
+  background-color: #fefefe;
+  border-radius: 25px 0px 0px 25px;
+  border: 5px solid #36897f;
+  padding-left: 70px !important;
+}
+
+/* Estilos para telas menores que 768px */
+@media only screen and (max-width: 768px) {
+
+  /* Remove o margin-top do span.logo */
+  .logo {
+    margin-top: 0;
+    font-size: 3.5rem;
+    margin-bottom: 5%;
+  }
+
+  /* Reduz o tamanho da fonte do h1 */
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  /* Adiciona um espaçamento inferior para o input#link-input */
+  #link-input {
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+
+
+  /* Ajusta a largura do input#link-input2 */
+  #link-input2 {
+    width: 55%;
+  }
+
+  /* Ajusta a posição do botão #criar-agora */
+  #criar-agora {
+    margin-top: 1rem;
+  }
+
+  body::before {
+    content: '';
+    background-image: url('https://techhub.dev.br/LinkZap/src/bg.jfif');
+    height: 100%;
+    background-repeat: repeat-y;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.4;
+    z-index: -1;
+  }
+
+  .imgFooter {
+    bottom: -5%;
+    position: fixed;
+    width: 300%;
+    height: auto;
+    z-index: -1;
+  }
+
+  #zap1 {
+    left: 70vw;
+    top: 63vh;
+    font-size: 15vw;
+  }
+
+  #zap2 {
+    left: 45vw;
+    top: 70vh;
+    transform: rotate(-83.3deg);
+    font-size: 12vw;
+  }
+
+  #zap3 {
+    left: 25vw;
+    top: 65vh;
+    transform: rotate(-6.8deg);
+    font-size: 8vw;
+  }
+
+  #short-url {
+    cursor: pointer;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 5% 5% 0;
+    text-decoration: underline;
+  }
+
+
+}

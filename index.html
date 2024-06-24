@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie link personalizado para WhatsApp - Saiba atrair clientes no Whatsapp - Marketing Digital Fácil e Grátis">
+    <meta name="keywords" content="link, links, whatsapp, marketing digital, empreendedorismo, ferramenta marketing, performance vendas, gratis, grátis">
+    <meta name="author" content="João Pedro Miranda">
+    <meta name="reply-to" content="jp.miranda.ga@gmail.com">
+
+    <!-- Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Heebo:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+    <link href="https://techhub.dev.br/LinkZap/styles/styles.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8X4RB106H"></script>
+    <link rel=”canonical” href="https://www.techhub.dev.br/LinkZap/index.html">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-L8X4RB106H');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" integrity="sha256-WCzAhd2P6gRJF9Hv3oOOd+hFJi/QJbv+Azn4CGB8gfY=" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5444333600185141" crossorigin="anonymous"></script>
+
+    <!-- Links -->
+    <link rel="canonical" href="https://techhub.dev.br/">
+    <link rel="icon" href="https://techhub.dev.br/LinkZap/src/whatsapp.png" type="image/icon type">
+    <title>LinkZap / Criador de Link Curto para WhatsApp Grátis</title>
+  </head>
+
+  <body>
+    <div class="spinner-overlay" style="display: none;">
+      <div class="spinner"></div>
+    </div>
+
+    <a href="#">
+      <span class="logo" style="margin-top: 50px; margin-left: 3%;">link</span>
+      <span class="logo logo-green">zap</span>
+    </a>
+
+    <header>
+      <h1>
+        CRIE SEU
+        <br />
+        LINK
+      </h1>
+    </header>
+
+    <main>
+      <div class="popup hidden">
+        <div class="popup-content">
+          <h2><span id="step-number"></span></h2>
+          <p id="step-description"></p>
+          <button id="close-button" class="btn btn-primary">Fechar</button>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input class="tutorial" type="text" id="link-input" placeholder="Olá! Quero saber mais sobre..." data-step="1" />
+        <div class="input-wrapper">
+          <select id="drop-list"></select>
+          <input class="tutorial" id="link-input2" placeholder="(99) 99999-9999" data-step="2" />
+        </div>
+      </div>
+
+      <p id="short-url"></p>
+      <div class="button-container">
+        <button id="criar-agora" type="submit" class="custom-button tutorial" data-step="3">CRIAR AGORA</button>
+      </div>
+      <i class="fa fa-whatsapp imagem" id="zap1"></i>
+      <i class="fa fa-whatsapp imagem" id="zap2"></i>
+      <i class="fa fa-whatsapp imagem" id="zap3"></i>
+      <img src="https://techhub.dev.br/LinkZap/src/elem.png" class="imgFooter" alt="Imagem de design.">
+      <script src="https://techhub.dev.br/LinkZap/script.js"></script>
+    </main>
+
+    <script>
+      const inputElement = document.getElementById('drop-list');
+      window.intlTelInput(inputElement, {
+        initialCountry: 'br',
+        preferredCountries: ['br'], // Países preferidos exibidos no topo
+        separateDialCode: true, // Exibe o código de telefone em um elemento separado
+      });
+
+      const dropList = document.getElementById('drop-list');
+
+      function populateCountryCodes() {
+        const iti = window.intlTelInputGlobals.getInstance(dropList);
+        const countryCodes = iti.getCountryData();
+
+        countryCodes.forEach(country => {
+          const option = document.createElement('option');
+          option.value = country.dialCode;
+          option.text = `+${country.dialCode} (${country.iso2.toUpperCase()})`;
+          dropList.appendChild(option);
+        });
+      }
+
+      populateCountryCodes();
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $('#link-input2').inputmask('(99) 99999-9999');
+      });
+    </script>
+
+  </body>
+
+</html>
