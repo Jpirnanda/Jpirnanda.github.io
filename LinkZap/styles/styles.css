@@ -7,7 +7,7 @@ body {
 
 body::before {
   content: '';
-  background-image: url('https://techhub.dev.br/LinkZap/src/bg.jfif');
+  background-image: url('/src/bg.jfif');
   background-size: 100%;
   background-repeat: no-repeat;
   position: fixed;
