@@ -22,9 +22,9 @@ Um site com motions desenvolvido para a Toyoserra, focado em design e impacto vi
 - **Firebase**: Armazenamento e gerenciamento de confirmações em tempo real.
 
 Para ver o projeto em ação, [clique aqui](https://jpirnanda.github.io/Convite/).
-/Imgs/convite.jpeg
 
-<br> <br>
+![Foto da página principal do website](https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/convite.jpeg)
+
 
 # LinkZap
 
@@ -48,4 +48,5 @@ Proporcionar uma solução prática para integrar o WhatsApp como ferramenta de 
 ## Demonstração
 
 Para ver o projeto em ação, [clique aqui](https://jpirnanda.github.io/LinkZap).
-/Imgs/linkzap.jpeg
+
+![Foto da página principal do website](https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/linkzap.jpeg)
