@@ -1,0 +1,53 @@
+/* Esconde a imagem em telas menores (mobile) */
+@media (max-width: 767px) {
+    #imgPC {
+        display: none;
+    }
+    .centered-svg {
+        width: 80%; /* Ajuste o tamanho conforme necessário */
+    }
+
+    button {
+        margin-top: 5% !important;
+    }
+
+    h1 {
+        font-size: 8vw;
+        margin: 10% !important;
+    }
+
+    #popupimg {
+        display: none;
+    }
+
+    .popup-content {
+        width: 80% !important;
+      }
+
+    #elemento-transparente {
+        bottom: 14% !important;
+        right: 17% !important;
+        width: 65% !important; 
+      }
+      
+
+    .fill {
+        height: 70% !important;
+        font-size: 3vw !important;
+        width: 30vw !important;
+    }
+}
+
+/* Mostra a imagem em telas maiores (desktop) */
+@media (min-width: 768px) {
+    #imgMobile {
+        display: none;
+    }
+    .centered-svg {
+        width: 75%; /* Ajuste o tamanho conforme necessário */
+    }
+
+    #popupimgMobile {
+        display: none;
+    }
+}
