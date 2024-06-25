@@ -1,0 +1,14 @@
+/* Barra de rolagem personalizada */
+body::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Trilho da barra de rolagem transparente */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #FF0000; /* Cor vermelha elegante para a barra de rolagem */
+    border: none; /* Sem bordas */
+    border-radius: 2px; /* Arredonde as bordas */
+}

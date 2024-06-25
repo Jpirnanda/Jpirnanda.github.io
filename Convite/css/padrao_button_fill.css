@@ -1,0 +1,35 @@
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em white;
+  color: black;
+}
+
+.fa-map {
+  --color: white;
+  --hover: black;
+  cursor: pointer;
+}
+
+button {
+  color: black;
+  transition: 0.75s;
+  white-space: nowrap;
+}
+
+button:hover, button:focus {
+  border-color: black;
+  color: white;
+  transition: 0.75s;
+}
+
+.fill {
+  margin: 0 !important;
+  background: black;
+  border: 2px solid black;
+  height: 100%;
+  width: 50%;
+  white-space: nowrap;
+  font-size: 80%;
+  cursor: pointer;
+  color: white;
+}

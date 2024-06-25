@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Convite Especial</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/telas.css">
+        <link rel="stylesheet" href="css/padrao_button.css">
+        <link rel="stylesheet" href="css/padrao_button_plus.css">
+        <link rel="stylesheet" href="css/padrao_button_fill.css">
+        <link rel="stylesheet" href="css/popup.css">
+
+        <script type="module" src="./js/firebase.js"></script>
+        <script type="module" src="./js/nameClient.js"></script>
+
+        <!-- Importando o jQuery a partir do CDN do Google -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <meta property="og:title" content="Inauguração Toyoserra">
+        <meta property="og:description" content="Convite Especial">
+        <meta property="og:image" content="imagem-desktop.png">
+        <meta property="og:url" content="https://grupotoyoserra.com.br/convite/">
+
+        <meta name="author" content="João Pedro Miranda">
+        <meta name="reply-to" content="jp.miranda.ga@gmail.com">
+
+    </head>
+
+    <body>
+        <div class="background-video">
+            <video id="vid" autoplay loop muted playsinline>
+            </video>
+        </div>
+        <div class="content">
+            <div class="centered-svg" id="first">
+                <img id="imgPC" src="src/imagem-desktop.png">
+                <img id="imgMobile" src="src/imagem-mobile.png">
+                <h1 id="clienteNome"></h1>
+            </div>
+            <div class="centered-svg" id="second">
+                <button id="button" class="button-default raise">CONFIRMAR</button>
+            </div>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closePopup"><i class="far fa-times-circle" style="font-size: 1.6rem;"></i></span>
+                <img id="popupimg" src="src/PopUp-horizontal.png">
+                <img id="popupimgMobile" src="src/PopUp-vertical.png">
+                <a href="https://maps.app.goo.gl/SD1u56qBuh9ytW617" target="_blank">
+                    <div id="elemento-transparente"> <button class="fill">Veja no mapa <i class="far fa-map"></i></button></div>
+                </a>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="./js/vid.js"></script>
+    <script src="./js/popup.js"></script>
+
+</html>
