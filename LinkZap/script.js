@@ -32,6 +32,7 @@ shortUrlEl.addEventListener('click', function () {
 //   let whatsInput = linkInput2.value.replace(/\D/g, "");
 //   let cod = selected.textContent.replace("+", "");
 //   console.log(cod)
+
 //   const data = 'url=https://wa.me/' + encodeURIComponent(cod + whatsInput + "?text=" + mesInput);
 //   // Envia a requisição
 //   const xhr = new XMLHttpRequest();
@@ -102,7 +103,8 @@ function enviarRequisicao() {
   let mesInput = encodeURIComponent(linkInput.value);
   let whatsInput = linkInput2.value.replace(/\D/g, "");
   let cod = selected.textContent.replace("+", "");
-  const urlWhatsApp = 'https://wa.me/' + encodeURIComponent(cod + whatsInput + "?text=" + mesInput);
+  
+  const urlWhatsApp = 'https://wa.me/' + encodeURIComponent(cod + whatsInput)+ "?text=" +encodeURIComponent(mesInput);
 
   // Atualiza o elemento com a URL do WhatsApp
   shortUrlEl.textContent = urlWhatsApp;
