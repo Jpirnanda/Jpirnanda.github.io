@@ -20,53 +20,106 @@ shortUrlEl.addEventListener('click', function () {
   return false
 })
 
-function enviarRequisicao() {
+// function enviarRequisicao() {
 
-  const selected = document.querySelector('.iti__selected-dial-code')
-  console.log(selected.textContent)
+//   const selected = document.querySelector('.iti__selected-dial-code')
+//   console.log(selected.textContent)
+
+//   spinnerOverlay.style.display = 'flex';
+//   criarAgora.disabled = true;
+//   // Monta a data com o valor dos inputs
+//   let mesInput = encodeURIComponent(linkInput.value);
+//   let whatsInput = linkInput2.value.replace(/\D/g, "");
+//   let cod = selected.textContent.replace("+", "");
+//   console.log(cod)
+//   const data = 'url=https://wa.me/' + encodeURIComponent(cod + whatsInput + "?text=" + mesInput);
+//   // Envia a requisição
+//   const xhr = new XMLHttpRequest();
+//   xhr.withCredentials = true;
+//   xhr.addEventListener('readystatechange', function () {
+//     if (this.readyState === this.DONE) {
+//       const response = JSON.parse(this.responseText);
+//       if (response.result_url) {
+//         const urlEncurtada = response.result_url;
+//         // Atualiza o elemento com a URL encurtada
+//         shortUrlEl.textContent = urlEncurtada;
+//         shortUrlEl.style.cursor = 'pointer';
+//         // Esconde os inputs e o botão de criar
+//         linkInput.style.display = 'none';
+//         linkInput2.style.display = 'none';
+//         inputWrapper.style.display = 'none'
+//         // Mostra o elemento com a URL encurtada
+//         shortUrlEl.style.display = 'block';
+//         shortUrlEl.style.textAlign = 'center';
+//         spinnerOverlay.style.display = 'none';
+//         criarAgora.disabled = false;
+//         currentStep = 3;
+//         closePopup();
+
+//       } else {
+//         console.log('Erro: resposta do servidor inválida.');
+//         console.log(this.responseText);
+//       }
+//     }
+//   });
+//   xhr.open('POST', 'https://url-shortener-service.p.rapidapi.com/shorten');
+//   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+//   xhr.setRequestHeader('X-RapidAPI-Key', '5762af6cc4msh0739424ae01b6dap10b8b6jsn539149e7622d');
+//   xhr.setRequestHeader('X-RapidAPI-Host', 'url-shortener-service.p.rapidapi.com');
+//   xhr.send(data);
+
+//   // Muda o texto do botão e adiciona um listener para reexibir os inputs
+//   criarAgora.textContent = 'Criar Outro';
+//   criarAgora.removeEventListener('click', enviarRequisicao);
+//   criarAgora.addEventListener('click', function () {
+//     // Exibe os inputs e o botão de criar
+//     linkInput.style.display = 'block';
+//     linkInput2.style.display = 'block';
+//     criarAgora.style.display = 'block';
+//     select.style.display = 'flex';
+//     inputWrapper.style.display = 'flex'
+//     // Esconde o elemento com a URL encurtada
+//     shortUrlEl.style.display = 'none';
+//     // Limpa o conteúdo do elemento com a URL encurtada
+//     shortUrlEl.textContent = '';
+//     // Muda o texto do botão de volta para 'Criar Agora'
+//     criarAgora.textContent = 'Criar Agora';
+//     linkInput.value = '';
+//     linkInput2.value = '';
+//     abrirPopUp(1);
+//     criarAgora.addEventListener('click', enviarRequisicao);
+//   });
+// }
+
+function enviarRequisicao() {
+  const selected = document.querySelector('.iti__selected-dial-code');
+  console.log(selected.textContent);
 
   spinnerOverlay.style.display = 'flex';
   criarAgora.disabled = true;
-  // Monta a data com o valor dos inputs
+
+  // Monta a URL do WhatsApp com o valor dos inputs
   let mesInput = encodeURIComponent(linkInput.value);
   let whatsInput = linkInput2.value.replace(/\D/g, "");
   let cod = selected.textContent.replace("+", "");
-  console.log(cod)
-  const data = 'url=https://wa.me/' + encodeURIComponent(cod + whatsInput + "?text=" + mesInput);
-  // Envia a requisição
-  const xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-  xhr.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-      const response = JSON.parse(this.responseText);
-      if (response.result_url) {
-        const urlEncurtada = response.result_url;
-        // Atualiza o elemento com a URL encurtada
-        shortUrlEl.textContent = urlEncurtada;
-        shortUrlEl.style.cursor = 'pointer';
-        // Esconde os inputs e o botão de criar
-        linkInput.style.display = 'none';
-        linkInput2.style.display = 'none';
-        inputWrapper.style.display = 'none'
-        // Mostra o elemento com a URL encurtada
-        shortUrlEl.style.display = 'block';
-        shortUrlEl.style.textAlign = 'center';
-        spinnerOverlay.style.display = 'none';
-        criarAgora.disabled = false;
-        currentStep = 3;
-        closePopup();
+  const urlWhatsApp = 'https://wa.me/' + encodeURIComponent(cod + whatsInput + "?text=" + mesInput);
 
-      } else {
-        console.log('Erro: resposta do servidor inválida.');
-        console.log(this.responseText);
-      }
-    }
-  });
-  xhr.open('POST', 'https://url-shortener-service.p.rapidapi.com/shorten');
-  xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('X-RapidAPI-Key', '5762af6cc4msh0739424ae01b6dap10b8b6jsn539149e7622d');
-  xhr.setRequestHeader('X-RapidAPI-Host', 'url-shortener-service.p.rapidapi.com');
-  xhr.send(data);
+  // Atualiza o elemento com a URL do WhatsApp
+  shortUrlEl.textContent = urlWhatsApp;
+  shortUrlEl.style.cursor = 'pointer';
+
+  // Esconde os inputs e o botão de criar
+  linkInput.style.display = 'none';
+  linkInput2.style.display = 'none';
+  inputWrapper.style.display = 'none';
+
+  // Mostra o elemento com a URL do WhatsApp
+  shortUrlEl.style.display = 'block';
+  shortUrlEl.style.textAlign = 'center';
+  spinnerOverlay.style.display = 'none';
+  criarAgora.disabled = false;
+  currentStep = 3;
+  closePopup();
 
   // Muda o texto do botão e adiciona um listener para reexibir os inputs
   criarAgora.textContent = 'Criar Outro';
@@ -77,11 +130,14 @@ function enviarRequisicao() {
     linkInput2.style.display = 'block';
     criarAgora.style.display = 'block';
     select.style.display = 'flex';
-    inputWrapper.style.display = 'flex'
-    // Esconde o elemento com a URL encurtada
+    inputWrapper.style.display = 'flex';
+
+    // Esconde o elemento com a URL do WhatsApp
     shortUrlEl.style.display = 'none';
-    // Limpa o conteúdo do elemento com a URL encurtada
+
+    // Limpa o conteúdo do elemento com a URL do WhatsApp
     shortUrlEl.textContent = '';
+
     // Muda o texto do botão de volta para 'Criar Agora'
     criarAgora.textContent = 'Criar Agora';
     linkInput.value = '';
