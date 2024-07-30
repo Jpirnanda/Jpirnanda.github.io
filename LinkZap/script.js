@@ -101,7 +101,7 @@ function enviarRequisicao() {
   console.log('teste');
   // Monta a URL do WhatsApp com o valor dos inputs
   console.log(linkInput.value);
-  let mesInput = linkInput.value.replace(/\n/g, '%0A'); // Substitui novas linhas por %0A
+  let mesInput = linkInput.value.replace("  ", '%0A'); // Substitui novas linhas por %0A
   console.log(mesInput);
   mesInput = encodeURIComponent(mesInput); // Codifica a URL
   console.log(mesInput);
