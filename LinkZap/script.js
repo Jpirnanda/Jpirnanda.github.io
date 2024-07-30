@@ -104,7 +104,7 @@ function enviarRequisicao() {
   let whatsInput = linkInput2.value.replace(/\D/g, "");
   let cod = selected.textContent.replace("+", "");
   
-  const urlWhatsApp = 'https://wa.me/' + encodeURIComponent(cod + whatsInput)+ "?text=" +encodeURIComponent(mesInput);
+  const urlWhatsApp = 'https://wa.me/' + encodeURIComponent((cod + whatsInput))+"?text="+mesInput;
 
   // Atualiza o elemento com a URL do WhatsApp
   shortUrlEl.textContent = urlWhatsApp;
