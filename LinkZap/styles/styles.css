@@ -146,16 +146,6 @@ input::placeholder {
   width: 50%;
 }
 
-#short-url {
-  cursor: pointer;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0 auto;
-  color: blue;
-  text-decoration: underline;
-}
-
 #short-url:hover {
   cursor: pointer;
 }
@@ -379,6 +369,26 @@ select {
     font-weight: bold;
     margin: 0 5% 5% 0;
     text-decoration: underline;
+    max-width: 50%;
+    overflow: overlay;
+  }
+
+  /* Customiza a aparência da scrollbar */
+  #short-url::-webkit-scrollbar {
+    width: 12px; /* Largura da scrollbar */
+  }
+
+  #short-url::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Cor de fundo da pista da scrollbar */
+  }
+
+  #short-url::-webkit-scrollbar-thumb {
+    background: #888; /* Cor da parte rolável da scrollbar */
+    border-radius: 10px; /* Bordas arredondadas do thumb */
+  }
+
+  #short-url::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor da parte rolável da scrollbar ao passar o mouse */
   }
 
 
