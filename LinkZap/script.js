@@ -100,15 +100,14 @@ function enviarRequisicao() {
   criarAgora.disabled = true;
 
   // Monta a URL do WhatsApp com o valor dos inputs
-  let mesInput = encodeURIComponent(linkInput.value);
+  let mesInput = linkInput.value.replace(/\n/g, '%0A'); // Substitui novas linhas por %0A
+  mesInput = encodeURIComponent(mesInput); // Codifica a URL
   let whatsInput = linkInput2.value.replace(/\D/g, "");
   let cod = selected.textContent.replace("+", "");
-
-  console.log(mesInput)
-  console.log(whatsInput)
-  console.log(cod)
   
-  const urlWhatsApp = 'https://wa.me/'+cod+whatsInput+"?text="+mesInput;
+  const urlWhatsApp = 'https://wa.me/' + cod + whatsInput + "?text=" + mesInput;
+  
+  console.log(urlWhatsApp);
 
   // Atualiza o elemento com a URL do WhatsApp
   shortUrlEl.textContent = urlWhatsApp;
