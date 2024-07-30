@@ -146,6 +146,16 @@ input::placeholder {
   width: 50%;
 }
 
+#short-url {
+  cursor: pointer;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto;
+  color: blue;
+  text-decoration: underline;
+}
+
 #short-url:hover {
   cursor: pointer;
 }
