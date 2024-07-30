@@ -94,24 +94,19 @@ shortUrlEl.addEventListener('click', function () {
 
 function enviarRequisicao() {
   const selected = document.querySelector('.iti__selected-dial-code');
+  console.log(selected.textContent);
 
   spinnerOverlay.style.display = 'flex';
   criarAgora.disabled = true;
 
-  console.log('teste');
-  // Monta a URL do WhatsApp com o valor dos inputs
   console.log(linkInput.value);
-  let mesInput = linkInput.value.replace(/\n/g, '%0A'); // Substitui novas linhas por %0A
-  console.log(mesInput);
-  mesInput = encodeURIComponent(mesInput); // Codifica a URL
+  // Monta a URL do WhatsApp com o valor dos inputs
+  let mesInput = encodeURIComponent(linkInput.value);
   console.log(mesInput);
   let whatsInput = linkInput2.value.replace(/\D/g, "");
   let cod = selected.textContent.replace("+", "");
-
   
-  const urlWhatsApp = 'https://wa.me/' + cod + whatsInput + "?text=" + mesInput;
-  
-  console.log(urlWhatsApp);
+  const urlWhatsApp = 'https://wa.me/'+cod+whatsInput+"?text="+mesInput;
 
   // Atualiza o elemento com a URL do WhatsApp
   shortUrlEl.textContent = urlWhatsApp;
