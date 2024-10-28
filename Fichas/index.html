@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fichas Técnicas</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+        <script type="text/javascript" src="fetch.js"></script>
+    <body>
+        <div class="left-col">
+            <div class="button-holder">
+                <br>
+                <h1>1º PASSO</h1>
+                <p>Escreva as placas abaixo para criar as fichas.</p>
+                <textarea class="multiple" placeholder="Placa 1, Placa 2,..." cols="100" rows="20" id="input-placa"></textarea>
+
+
+                <h1>2º PASSO</h1>
+                <!-- <button id="btn-ficha">Gerar fichas</button> -->
+                <p>Role para baixo para visualizar as fichas criadas. <br> <strong>Confirme e ajeite as informações necessárias.</strong></p>
+            </div>
+        </div>
+
+        <div class="imgDiv">
+            <img class="img" src="bgQual.png" alt="Ficha"></img>
+            <div class="quadrante" style="top: 0;">
+                <div class="linha">
+                    <div class="coluna t">
+                        <input type="text" name="MMV" maxlength="32">
+                    </div>
+                    <div class="coluna q">
+                        <input type="text" name="placa" maxlength="9">
+                    </div>
+                </div>
+                <div class="linha">
+                    <div class="coluna q"><input type="text" name="am" maxlength="9"></div>
+                    <div class="coluna q"><input type="text" name="trans" maxlength="9"></div>
+                    <div class="coluna q"><input type="text" name="km" maxlength="9"></div>
+                    <div class="coluna q"><input type="text" name="comb" maxlength="9"></div>
+                </div>
+                <div class="linha" style="height: 5%;"></div>
+                <div class="linha g">
+                    <div class="coluna m">
+                        <textarea type="text" name="descricao" maxlength="140"></textarea>
+                    </div>
+                </div>
+                <div class="linha g">
+                    <div class="coluna m preco">
+                        <textarea type="text" name="rs" maxlength="140" style=" width: 15%; height: 30%;"></textarea>
+                        <textarea type="text" name="preco" maxlength="140" style=" width: 60%;"></textarea>
+                        <textarea type="text" name="pos" maxlength="140" style=" width: 15%; height: 30%;"></textarea>
+                    </div>
+                </div>
+                <div class="linha d">
+                    <div class="coluna">
+                        <textarea type="text" name="cc" maxlength="129"></textarea>
+                    </div>
+                </div>
+                <div class="linha d">
+                    <div class="coluna">
+                        <textarea type="text" name="edv" maxlength="129"></textarea>
+                    </div>
+                </div>
+                <div class="linha">
+                    <div class="coluna">
+                        <input type="text" name="rd" maxlength="43">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="button-holder">
+                <br>
+                <h1>3º PASSO</h1>
+                <p>As fichas serão baixadas em PDF para sua pasta de download.</p>
+                <button id="btn">Baixar PDF</button>
+            </div>
+        </div>
+
+    </body>
+
+</html>
