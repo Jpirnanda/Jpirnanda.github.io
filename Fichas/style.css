@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('Regular.ttf') format('ttf');
+    /* Outros formatos de fonte, se aplicável */
+}
+
+* {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+h1{
+    font-size: 28px;
+    color: #f2f2f2;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vh;
+    overflow-y: scroll;
+    padding-top: 0;
+    margin: 0;
+}
+
+.imgDiv {
+    position: relative;
+    width: 100%;
+    height: auto; /* Altura da viewport */
+    overflow: hidden;
+    left: 50%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.quadrante {
+    position: absolute;
+    width: 100%;
+    height: 87%;
+    /* background-color: rgba(255,0,0, 0.2); */
+    border-radius: 10px 10px 10px 10px; /* Forma circular */
+    margin-top: 5%;
+    padding-top: 9.5%;
+}
+
+.linha {
+    position: relative;
+    width: auto;
+    height: 6%;
+    /* background-color: rgba(0,0,255, 0.2);  */
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+}
+
+.coluna {
+    /* background-color: rgba(0,255,0, 0.2);  */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.q {
+    width: 21%;
+}
+
+.m {
+    width: 46%;
+}
+
+.t {
+    width: 71%;
+}
+
+.g {
+    height: 20%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.d {
+    height: 12%;
+    margin-top: 1%;
+}
+
+input, textarea  {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+    border: 0px;
+    background-color: transparent;
+    resize: none;
+    max-height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+input {
+    text-align: center;
+}
+
+input, textarea:focus {
+    outline: none;
+    border: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;   
+}
+
+.preco {
+    display: flex;
+    align-items: center;
+}
+
+textarea[name="preco"] {
+    font-size: 45px;
+    text-align: center;
+    height: 30%;
+    font-weight: 500;
+}
+
+textarea[name="rs"] {
+    font-size: 32px;
+    text-align: center;
+    height: 30%;
+}
+
+textarea[name="pos"] {
+    font-size: 30px;
+    text-align: center;
+    height: 30%;
+}
+
+.left-col {
+    position: fixed;
+    height: 100%;
+    width: 22%;
+    background-color:cadetblue;
+}
+
+.right-col {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 22%;
+    background-color:cadetblue;
+}
+
+.button-holder {
+    margin-left: 5%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+}
+
+.multiple {
+    border: 1px solid black; 
+    height: 150px;
+    font-size: 90%; /* Tamanho da fonte do placeholder */
+    margin-bottom: 50px !important;
+}
+.multiple:focus {
+    border: 1px solid black; 
+    height: 150px;
+}
+
+button {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 70%;
+  margin-top: 5%;
+}
+
+button:hover {
+    background-color: #3448d1; /* Cor de fundo quando hover */
+    transform: translateY(-2px); /* Move o botão para cima quando hover */
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 4px 8px 0 rgba(0, 0, 0, .1); /* Efeito de sombra quando hover */
+  }
+  
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+/* --------------------- */
+
+input[name="km"], input[name="comb"], input[name="am"],input[name="placa"] {
+    font-size: 22px;
+}
+
+
+
+@import "compass/css3";
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#input-placa {
+  background-image: linear-gradient(#ffffff 50%, #f3f8ff 50%);
+  background-size: 100% 4rem;
+  border: 1px solid #c6d0cc;
+  width: 100%;
+  height: 200px;
+  line-height: 2rem;
+  margin: 0 auto;
+  padding: 4px 8px;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
