@@ -72,4 +72,8 @@ O Indoor App facilita a exibição de conteúdos promocionais e informativos sem
 ## Demonstração
 📲 Em breve, um link para testar o aplicativo!
 
-![Foto da página principal do app](https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/Indoor1.jpeg) | ![Foto da página principal do app](https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/Indoor2.jpeg)
+<p align="center">
+  <img src="https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/Indoor1.jpeg" width="45%" />
+  <img src="https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/Indoor2.jpeg" width="45%" />
+</p>
+
