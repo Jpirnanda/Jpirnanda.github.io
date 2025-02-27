@@ -1,0 +1,109 @@
+body.dark {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #333333;
+  color: #e6e6e6;
+}
+
+.profile-pic.dark {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 8px solid #ffffff;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  display: block;
+}
+
+.skills.dark {
+  margin-bottom: 30px;
+}
+
+.project.dark {
+  margin-bottom: 30px;
+}
+
+.project h4.dark {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.project p.dark {
+  margin-bottom: 10px;
+}
+
+.navbar-nav.dark {
+  text-align: center;
+}
+
+.nav-link.dark {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #e6e6e6;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
+}
+
+.custom-hr.dark {
+  border: none;
+  height: 2px;
+  background-color: #e6e6e6;
+  width: 100%;
+}
+
+.switchText.dark {
+  color: #333333;
+}
+
+.scroll-title.dark {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  color: #333;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.comment-title.dark {
+  margin: 0;
+  color: black;
+}
+
+.comment-box.dark {
+  display: inline-block;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+.comment-header.dark {
+  background-color: #e6e6e6;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.comment-icons i.dark {
+  margin-right: 10px;
+  color: #333;
+}
+
+.card.dark{
+  background-color: #f2f2f2;
+}

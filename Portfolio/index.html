@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Meu Portfólio</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/styleDark.css">
+        <link rel="stylesheet" href="/css/styleLight.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/script.js"></script>
+    </head>
+
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container d-flex justify-content-center">
+                    <a class="navbar-brand" href="#">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="scrollToSection()">Projetos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/jp-m-g-a-04/" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/Jpirnanda" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://api.whatsapp.com/send/?phone=5522998961154&text=Ol%C3%A1%21+Vi+seu+Portf%C3%B3lio+e+quero+saber+mais.&type=phone_number&app_absent=0" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.instagram.com/jota.py_/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider round"></span>
+                        </label>
+                        <span class="switchText">Light</span>
+                    </div>
+                </div>
+            </nav>
+            <!-- Estrutura do modal -->
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img id="modalImage" src="" alt="Imagem" class="modal-content" />
+            </div>
+            <!-- Informações -->
+            <div class="scroll-container">
+                <div class="scroll-title">Sobre</div>
+                <div class="container">
+                    <br>
+                    <div class="text-center">
+                        <img src="/img.jfif" alt="Minha foto" class="profile-pic">
+                    </div>
+                    <div class="text-center title">
+                        <h5>Olá! Eu sou o João.</h5>
+                        <h2>Desenvolvedor Fullstack</h2>
+                    </div>
+                    <div class="text-center">
+                        <span class="comment-box">
+                            <div class="comment-header">
+                                <h4 class="comment-title">Write Box</h4>
+                                <div class="comment-icons">
+                                    <i class="fas fa-bold"></i>
+                                    <i class="fas fa-paragraph"></i>
+                                    <i class="fas fa-link"></i>
+                                    <i class="fas fa-paperclip"></i>
+                                    <i class="fas fa-code"></i>
+                                    <i class="fas fa-level-down-alt"></i>
+                                </div>
+                            </div>
+                            <div class="comment-content text-left">
+                                <p>
+                                    Sou um apaixonado por tecnologia e desenvolvimento. <br>
+                                    Estou sempre em busca de desafios interessantes e projetos inovadores para colaborar.
+                                    <br>
+                                    Fique à vontade para explorar meu portfolio e conhecer alguns dos meus trabalhos. <br>
+                                    Estou aberto a novas oportunidades e adoraria discutir como posso contribuir para o
+                                    sucesso do
+                                    seu projeto.
+                                </p>
+                            </div>
+                        </span>
+
+
+                    </div>
+                    <hr class="custom-hr">
+                    <div class="text-center skills">
+                        <h4>Habilidades:</h4>
+                        <p>
+                            <span class="tag">Python</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Bootstrap</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">API</span>
+                            <span class="tag">Integrações</span>
+                            <span class="tag">IA</span>
+                            <span class="tag">DialogFlow</span>
+                            <span class="tag">DJANGO</span>
+                        </p>
+
+                        <p class="fw-bold">Outras skills:</p>
+                        <p>
+                            <span class="tag">DRMs e CRMs</span>
+                            <span class="tag">SEO</span>
+                            <span class="tag">Gestão de Tráfego Pago</span>
+                            <span class="tag">Design e UI/UX</span>
+                            <span class="tag">Social Media</span>
+                        </p>
+                    </div>
+                    <hr class="custom-hr">
+                </div>
+            </div>
+
+            <div class="scroll-container">
+                <div class="scroll-title">Projetos</div>
+                <h2 style="text-align: center; margin-bottom: 100px;">PROJETOS</h2>
+                <div class="d-flex justify-content-center align-items-center">
+
+                    <div class="container">
+                        <div class="row" id="projects">
+                            <div class="card" data-project="convite">
+                                <img src="./projeto4.jpeg">
+                                <div class="card-content">
+                                    <h5>Convite Personalizado para Evento VIP</h5>
+                                    <div class="tags">
+                                        <span class="tag">FIREBASE</span>
+                                        <span class="tag">HTML</span>
+                                        <span class="tag">CSS</span>
+                                        <span class="tag">JS</span>
+                                        <span class="tag">WEB DESIGN</span>
+                                    </div>
+                                    <p class="card-text">Convite com motion design e personalização. Acompanha uma lista de dados em tempo real (FIREBASE) dos clientes que confirmaram presença.</p>
+                                </div>
+                            </div>
+
+                            <div class="card" data-project="linkzap">
+                                <img src="./projeto6.jpeg">
+                                <div class="card-content">
+                                    <h5>LinkZap</h5>
+                                    <div class="tags">
+                                        <span class="tag">HTML</span>
+                                        <span class="tag">CSS</span>
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">Marketing</span>
+                                    </div>
+                                    <p class="card-text">Ferramenta de marketing digital, site feito para criação de link de WhatsApp com mensagem personalizada.</p>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="card">
+                                    <img src="./projeto3.jpeg" alt="Site para controle de estoque de veículos.">
+                                    <div class="card-content">
+                                        <h5>Lógica para Integração e Formatação</h5>
+                                        <div class="tags">
+                                            <span class="tag">EXCEL</span>
+                                            <span class="tag">INTEGRAÇÃO</span>
+                                            <span class="tag">AUTOMAÇÃO</span>
+                                            <span class="tag">DATA</span>
+                                        </div>
+                                        <p class="card-text">Lógica em fórmulas de excel para o processo de formatação para integrar produtos em portais de venda de modo padronizado e chamativo.</p>
+                                    </div>
+                                </div> -->
+                            <div class="card" data-project="newscrapper">
+                                <img src="./projeto7.jpeg">
+                                <div class="card-content">
+                                    <h5>NewScraper</h5>
+                                    <div class="tags">
+                                        <span class="tag">REACT</span>
+                                        <span class="tag">PYTHON</span>
+                                        <span class="tag">SELENIUM</span>
+                                        <span class="tag">IA</span>
+                                        <span class="tag">ANTDESIGN</span>
+                                        <span class="tag">RENDER</span>
+                                    </div>
+                                    <p class="card-text">O Newscrapper é uma ferramenta que coleta notícias da web e utiliza IA para resumir e reescrever os textos com base em um viés específico.</p>
+                                </div>
+                            </div>
+                            <div class="card" data-project="portfolio">
+                                <img src="./projeto5.jpeg" alt="Site para controle de estoque de veículos.">
+                                <div class="card-content">
+                                    <h5>Esse Portfolio!</h5>
+                                    <div class="tags">
+                                        <span class="tag">HTML</span>
+                                        <span class="tag">CSS</span>
+                                        <span class="tag">JS</span>
+                                        <span class="tag">FIGMA</span>
+                                        <span class="tag">WEB DESIGN</span>
+                                    </div>
+                                    <p class="card-text">Esse portfólio foi idealizado seguindo o fluxo de webdesign, seguindo do wireframe, a conceitualização em figma e o desenvolvimento do código.</p>
+                                </div>
+                            </div>
+
+
+                            <div class="card" data-project="dashboard">
+                                <img src="./projeto2.jpeg" alt="Site para controle de estoque de veículos.">
+                                <div class="card-content">
+                                    <h5>Dashboard em Looker</h5>
+                                    <div class="tags">
+                                        <span class="tag">GOOGLE LOOKER (DataStudio)</span>
+                                        <span class="tag">DESIGN</span>
+                                        <span class="tag">DATA</span>
+                                    </div>
+                                    <p class="card-text">Dashboard para análise de desempenho do setor digital com filtros, segmentação e sincronização em tempo real.</p>
+                                </div>
+                            </div>
+
+                            <div class="card" data-project="gestor">
+                                <img src="./projeto1.jpeg" alt="Site para controle de estoque de veículos.">
+                                <div class="card-content">
+                                    <h5>Controle de Estoque com Automação</h5>
+                                    <div class="tags">
+                                        <span class="tag">DJANGO</span>
+                                        <span class="tag">PYTHON</span>
+                                        <span class="tag">AUTOMAÇÃO</span>
+                                        <span class="tag">DATA</span>
+                                    </div>
+                                    <p class="card-text">Sistema inovador desenvolvido em Django para auxiliar no controle de estoque, com atualizações dinâmicas para tomada de ação em tempo hábil.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2 id="modal-title"></h2>
+                        <hr class="custom-hr">
+                        <p id="modal-text"></p>
+                        <hr class="custom-hr">
+                        <h3 id="modal-subtitle"> Funcionalidades </h3>
+                        <ul id="modal-list"></ul>
+                        <img id="modal-image" src="" alt="">
+                        <div id="modal-link">
+                            <!-- O botão será manipulado no JS -->
+                            <button id="viewProjectBtn">Ver Projeto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Seletor para todos os links dentro dos cards
+                    var cardLinks = document.querySelectorAll('#projects a');
+
+                    // Adiciona um evento de clique a cada link
+                    cardLinks.forEach(function (link) {
+                        link.addEventListener('click', function (event) {
+                            // Verifica se o link clicado é o primeiro projeto (Convite)
+                            if (event.currentTarget.getAttribute('href') != '/convite/convite.html') {
+                                // Impede a navegação padrão
+                                event.preventDefault();
+
+                                // Exibe o popup de aviso
+                                alert('Opa! Essa página de projeto ainda está em construção. Volte mais tarde!');
+                            }
+                        });
+                    });
+                });
+            </script>
+
+        </div>
+    </body>
+
+
+</html>
