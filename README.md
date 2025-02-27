@@ -50,3 +50,26 @@ Proporcionar uma solução prática para integrar o WhatsApp como ferramenta de 
 Para ver o projeto em ação, [clique aqui](https://jpirnanda.github.io/LinkZap).
 
 ![Foto da página principal do website](https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/linkzap.jpeg)
+
+
+## Indoor
+O Indoor App é uma solução desenvolvida com React Native, Expo e Firebase, projetada para transformar qualquer Smart TV em uma ferramenta de marketing indoor com gerenciamento em nuvem de conteúdo. Com ele, empresas podem exibir mídias personalizadas sem necessidade de dispositivos intermediários, cabos ou configurações complexas.
+
+Funcionalidades
+✅ Upload de Mídia: Envie vídeos e imagens diretamente do celular para a TV.
+✅ Sincronização Automática: O conteúdo atualizado é transmitido para a TV em tempo real.
+✅ Fila de Exibição: Organize a ordem dos conteúdos e defina quando serão exibidos.
+✅ Controle Remoto via App: Gerencie a programação da TV de qualquer lugar.
+
+Tecnologias
+- **React Native + Expo**: Aplicativo leve, rápido e intuitivo.
+- **Firebase**: Armazena e sincroniza conteúdos em tempo real.
+- **Mercado Pago**: Integração para planos pagos e assinaturas por cartão, boleto e pix.
+
+Propósito
+O Indoor App facilita a exibição de conteúdos promocionais e informativos sem a necessidade de dongles, cabos HDMI ou configurações manuais. Uma experiência de marketing moderna e sem complicações, perfeita para lojas, clínicas, restaurantes e outros negócios.
+
+Demonstração
+📲 Em breve, um link para testar o aplicativo!
+
+![Foto da página principal do app](https://github.com/Jpirnanda/Jpirnanda.github.io/blob/main/Imgs/linkzap.jpeg)
