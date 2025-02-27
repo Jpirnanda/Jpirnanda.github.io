@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<strong>Personalização do Nome</strong>: Cada cliente recebe um URL único com seu nome personalizado no convite.",
         "<strong>Confirmação em Tempo Real</strong>: Todas as confirmações são enviadas para um banco de dados Firebase, gerando uma lista de confirmações em tempo real."
       ],
-      image: "./projeto4.jpeg",
+      image: "https://jpirnanda.github.io/Portfolio/projeto4.jpeg",
       link: "https://jpirnanda.github.io/Convite/"
     },
     linkzap: {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<strong>Input de Mensagem</strong>: Permite ao usuário inserir a mensagem que deseja que o cliente envie ao entrar em contato.",
         "<strong>Input de Número de WhatsApp</strong>: Onde o usuário insere seu próprio número de WhatsApp para gerar o link da API."
       ],
-      image: "./projeto6.jpeg",
+      image: "https://jpirnanda.github.io/Portfolio/projeto6.jpeg",
       link: "https://jpirnanda.github.io/LinkZap/",
     },
     portfolio: {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<strong>Desenvolvimento Responsivo</strong>: Implementação com HTML, CSS e JavaScript para garantir compatibilidade em diferentes dispositivos.",
         "<strong>Design Moderno</strong>: Uso das melhores práticas de web design para criar uma experiência agradável e profissional."
       ],
-      image: "./projeto5.jpeg",
+      image: "https://jpirnanda.github.io/Portfolio/projeto5.jpeg",
       link: "", // Substitua pelo link real do projeto, se houver
     },
     newscrapper: {
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<strong>Personalização de Viés</strong>: Reescrita das notícias de acordo com um viés determinado no prompt.",
         "<strong>Interface Moderna</strong>: Construída com React e Ant Design para uma experiência fluida e responsiva."
       ],
-      image: "./projeto7.jpeg", // Substitua pela imagem real, se houver
+      image: "https://jpirnanda.github.io/Portfolio/projeto7.jpeg", // Substitua pela imagem real, se houver
       link: "https://newscrapper-914a8.web.app/"
     },
     dashboard: {
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<strong>Sincronização em Tempo Real</strong>: Atualização automática dos dados para decisões ágeis.",
         "<strong>Design Intuitivo</strong>: Interface limpa e de fácil navegação para visualização eficiente."
       ],
-      image: "./projeto2.jpeg", // Substitua pela imagem real, se houver
+      image: "https://jpirnanda.github.io/Portfolio/projeto2.jpeg", // Substitua pela imagem real, se houver
       link: "indisponivel" // Adicione o link real, se disponível
     },
     gestor: {
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<strong>Verificação de Anúncios</strong>: Monitoramento de portais integrados via API e checagem da veiculação de anúncios.",
         "<strong>Automação de Processos</strong>: Redução significativa de horas de trabalho diárias, apontando apenas o que falta fazer."
       ],
-      image: "./projeto1.jpeg", // Substitua pela imagem real, se houver
+      image: "https://jpirnanda.github.io/Portfolio/projeto1.jpeg", // Substitua pela imagem real, se houver
       link: "indisponivel" // Adicione o link real, se disponível
     }
 
