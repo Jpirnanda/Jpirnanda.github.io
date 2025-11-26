@@ -5,77 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guia Visual de Flexbox CSS</title>
     <style>
-      /* --- ESTILOS GERAIS --- */
+      /* --- ESTILOS GERAIS (Reset e Tipografia) --- */
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
         color: #333;
+        margin: 0; /* Importante para as seções irem até a borda */
+        padding: 0;
+        background-color: #fff;
+      }
+
+      /* --- ESTRUTURA DE SEÇÕES (NOVO) --- */
+      section.topic {
+        min-height: 70vh; /* Ocupa pelo menos 70% da altura da tela */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza verticalmente o conteúdo */
+        padding: 40px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      /* Cores Alternadas Suaves */
+      section.topic:nth-of-type(odd) {
+        background-color: #ffffff; /* Branco */
+      }
+      section.topic:nth-of-type(even) {
+        background-color: #f4f7f9; /* Azul acinzentado muito suave */
+      }
+
+      /* Container interno para limitar a largura do texto */
+      .topic-content {
         max-width: 900px;
         margin: 0 auto;
-        padding: 20px;
-        background-color: #ffffff;
+        width: 100%;
       }
+
+      /* Títulos */
       h1 {
         color: #2c3e50;
         text-align: center;
-        margin-bottom: 40px;
+        margin: 0 0 10px 0;
+      }
+      h1.main-title {
+        padding-top: 40px;
       }
       h2 {
         color: #2980b9;
-        border-bottom: 2px solid #eee;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 10px;
-        margin-top: 60px; /* Aumentei margem para separar seções */
+        margin-top: 0; /* O padding da section já cuida do espaço */
       }
       h3 {
         color: #555;
         margin-bottom: 5px;
         margin-top: 25px;
       }
+
       p.desc {
-        margin-bottom: 15px;
-        background: #f9f9f9;
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.7); /* Transparência para funcionar em qualquer fundo */
         padding: 15px;
         border-left: 5px solid #2980b9;
         border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
       }
 
-      /* --- NOVO ESTILO DE CÓDIGO (Alto Contraste) --- */
+      /* --- CÓDIGO (Alto Contraste) --- */
       code {
-        background: #eee;
+        background: #e1e5e9;
         padding: 2px 5px;
         border-radius: 3px;
         font-family: "Consolas", "Monaco", monospace;
         color: #c7254e;
       }
       pre {
-        background: #f4f4f4;
+        background: #2d3436; /* Fundo escuro para destacar mais */
         border: 1px solid #ddd;
-        color: #333;
-        padding: 15px;
-        border-radius: 5px;
+        color: #f5f6fa; /* Texto claro */
+        padding: 20px;
+        border-radius: 8px;
         overflow-x: auto;
         font-family: "Consolas", "Monaco", monospace;
-        font-size: 0.95rem;
+        font-size: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
       .highlight {
-        color: #0000cc;
+        color: #4cd137;
         font-weight: bold;
-      }
+      } /* Verde neon para destaque no fundo escuro */
       .comment {
-        color: #666;
+        color: #aaa;
         font-style: italic;
       }
-      .prop {
-        color: #e01e5a;
-      } /* Cor para propriedades CSS no texto */
 
-      /* --- ESTILOS DAS CAIXAS DE DEMONSTRAÇÃO --- */
+      /* --- CAIXAS DE DEMONSTRAÇÃO --- */
       .demo-container {
-        background-color: #eef2f5;
-        border: 2px solid #bdc3c7;
+        background-color: #fff;
+        border: 2px dashed #bdc3c7;
         margin-bottom: 30px;
-        padding: 10px;
+        padding: 15px;
         min-height: 200px;
+        border-radius: 8px;
       }
 
       .item {
@@ -95,7 +125,7 @@
         align-items: center;
       }
 
-      /* --- CLASSES BÁSICAS FLEXBOX (Teoria) --- */
+      /* --- CLASSES FLEXBOX --- */
       .flex-active {
         display: flex;
       }
@@ -127,34 +157,30 @@
         align-items: flex-end;
       }
 
-      /* --- ESTILOS ESPECÍFICOS PARA OS CASOS DE USO (Novos) --- */
-
-      /* Caso 1: Cards */
+      /* --- ESTILOS DOS CASOS DE USO --- */
       .card-row {
         display: flex;
-        /* Usando space-between para afastar os cards extremos nas bordas */
         justify-content: space-between;
       }
-      /* Ajuste para remover a margem automática quando o card está na row */
       .card-row .product-card {
         margin: 0;
-        width: 30%; /* Largura flexível (aprox 1/3 menos espaço) ou fixa */
-        max-width: 250px; /* Trava o tamanho máximo */
+        width: 30%;
+        max-width: 250px;
       }
 
-      /* Caso 2: Texto e Imagem */
       .feature-container {
         display: flex;
-        align-items: center; /* Centraliza o texto verticalmente em relação à imagem */
+        align-items: center;
         background: #fff;
         border: 1px solid #ddd;
         margin-bottom: 20px;
         padding: 20px;
         gap: 30px;
+        border-radius: 8px;
       }
       .feature-text {
         flex: 1;
-      } /* O texto ocupa o espaço restante */
+      }
       .feature-img {
         width: 150px;
         height: 100px;
@@ -165,24 +191,22 @@
         color: white;
         border-radius: 4px;
       }
-      /* Classe para inverter a ordem visualmente */
       .reverse {
         flex-direction: row-reverse;
       }
 
-      /* Caso 3: Navbar */
       .navbar-demo {
         display: flex;
-        justify-content: space-between; /* Afasta Logo e Links */
-        align-items: center; /* Centraliza verticalmente */
+        justify-content: space-between;
+        align-items: center;
         background-color: #2c3e50;
         color: white;
         padding: 15px 30px;
         border-radius: 4px;
       }
       .nav-links {
-        display: flex; /* Transforma a lista ul em linha */
-        gap: 20px; /* Espaço entre os links */
+        display: flex;
+        gap: 20px;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -191,23 +215,17 @@
         cursor: pointer;
         opacity: 0.9;
       }
-      .nav-links li:hover {
-        opacity: 1;
-        text-decoration: underline;
-      }
 
-      /* Caso 4: Card de Produto (Estilo Base) */
       .product-card {
         display: flex;
-        flex-direction: column; /* Organiza itens um embaixo do outro */
-        justify-content: space-between; /* Empurra o botão para o final se houver altura fixa */
-
+        flex-direction: column;
+        justify-content: space-between;
         width: 250px;
-        height: 350px; /* Altura fixa para demonstrar o alinhamento */
+        height: 350px;
         background: white;
         border: 1px solid #ddd;
         padding: 15px;
-        margin: 0 auto; /* Centraliza se estiver sozinho */
+        margin: 0 auto;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
@@ -235,298 +253,256 @@
         border-radius: 4px;
         cursor: pointer;
         margin-top: 10px;
-        /* Se eu quiser o botão esticado, uso align-self: stretch (padrão no column). 
-               Se quiser centralizado, align-self: center */
       }
     </style>
   </head>
   <body>
-    <h1>Guia Prático do CSS Flexbox</h1>
+    <!-- INTRO -->
+    <section class="topic" style="min-height: 40vh">
+      <div class="topic-content">
+        <h1 class="main-title">Guia Prático do CSS Flexbox</h1>
+        <p style="text-align: center; color: #777">Um guia visual segmentado para entender layout.</p>
+      </div>
+    </section>
 
-    <!-- --- PARTE TEÓRICA --- -->
+    <!-- TÓPICO 1 -->
+    <section class="topic">
+      <div class="topic-content">
+        <h2>1. O Container Pai</h2>
+        <p class="desc">Para começar, aplicamos <code>display: flex</code> no elemento pai. Isso transforma os filhos em itens flexíveis.</p>
 
-    <!-- SEÇÃO 1 -->
-    <h2>1. O Container Pai</h2>
-    <p class="desc">Para começar, aplicamos <code>display: flex</code> no elemento pai. Isso transforma os filhos em itens flexíveis que ficam lado a lado.</p>
+        <h3>Padrão (Sem Flexbox)</h3>
+        <div class="demo-container">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
 
-    <h3>Padrão (Sem Flexbox)</h3>
-    <div class="demo-container">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
-
-    <h3>Com Flexbox Ativado</h3>
-    <pre><code>.container {
+        <h3>Com Flexbox Ativado</h3>
+        <pre><code>.container {
   <span class="highlight">display: flex;</span>
 }</code></pre>
-    <div class="demo-container flex-active">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <div class="demo-container flex-active">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- SEÇÃO 2 -->
-    <h2>2. Direção (Flex Direction)</h2>
-    <p class="desc">O padrão é em linha. Podemos mudar para coluna se quisermos empilhar os itens.</p>
+    <!-- TÓPICO 2 -->
+    <section class="topic">
+      <div class="topic-content">
+        <h2>2. Direção (Flex Direction)</h2>
+        <p class="desc">O padrão é em linha (row). Podemos mudar para coluna se quisermos empilhar os itens.</p>
 
-    <h3>Column (Coluna)</h3>
-    <pre><code>.container {
+        <h3>Column (Coluna)</h3>
+        <pre><code>.container {
   display: flex;
   <span class="highlight">flex-direction: column;</span>
 }</code></pre>
-    <div class="demo-container flex-active column" style="height: 300px">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <div class="demo-container flex-active column" style="height: 300px">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- SEÇÃO 3 -->
-    <h2>3. Alinhamento Horizontal (Justify Content)</h2>
-    <p class="desc">A propriedade <code>justify-content</code> controla como os itens são distribuídos na <strong>horizontal</strong> (esquerda/direita).</p>
+    <!-- TÓPICO 3 -->
+    <section class="topic">
+      <div class="topic-content">
+        <h2>3. Alinhamento Horizontal (Justify Content)</h2>
+        <p class="desc">Controla a distribuição no eixo principal (Horizontal). Propriedade: <code>justify-content</code>.</p>
 
-    <h3>Center (Centro Horizontal)</h3>
-    <pre><code>.container {
-  display: flex;
-  <span class="highlight">justify-content: center;</span>
-}</code></pre>
-    <div class="demo-container flex-active jc-center">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Center</h3>
+        <pre><code>.container { <span class="highlight">justify-content: center;</span> }</code></pre>
+        <div class="demo-container flex-active jc-center">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
 
-    <h3>Space-Between (Espaço Entre)</h3>
-    <p>Cola o primeiro item na esquerda, o último na direita, e divide o resto.</p>
-    <pre><code>.container {
-  display: flex;
-  <span class="highlight">justify-content: space-between;</span>
-}</code></pre>
-    <div class="demo-container flex-active jc-space-between">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Space-Between</h3>
+        <p style="font-size: 0.9em; margin-top: -10px; margin-bottom: 10px">Extremos colados nas bordas.</p>
+        <div class="demo-container flex-active jc-space-between">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
 
-    <h3>Space-Around (Espaço ao Redor)</h3>
-    <p>Distribui espaço igual ao redor de cada item. Note que o espaço nas pontas é metade do espaço entre os itens.</p>
-    <pre><code>.container {
-  display: flex;
-  <span class="highlight">justify-content: space-around;</span>
-}</code></pre>
-    <div class="demo-container flex-active jc-space-around">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Space-Around</h3>
+        <p style="font-size: 0.9em; margin-top: -10px; margin-bottom: 10px">Espaços laterais menores que os centrais.</p>
+        <div class="demo-container flex-active jc-space-around">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
 
-    <h3>Space-Evenly (Espaço Uniforme)</h3>
-    <p>Distribui o espaço de forma perfeitamente igual, inclusive nas bordas e entre os itens.</p>
-    <pre><code>.container {
-  display: flex;
-  <span class="highlight">justify-content: space-evenly;</span>
-}</code></pre>
-    <div class="demo-container flex-active jc-space-evenly">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Space-Evenly</h3>
+        <p style="font-size: 0.9em; margin-top: -10px; margin-bottom: 10px">Espaços perfeitamente iguais.</p>
+        <div class="demo-container flex-active jc-space-evenly">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- SEÇÃO 4 -->
-    <h2>4. Alinhamento Vertical (Align Items)</h2>
-    <p class="desc">A propriedade <code>align-items</code> controla como os itens se comportam na <strong>vertical</strong> (topo/fundo).</p>
+    <!-- TÓPICO 4 -->
+    <section class="topic">
+      <div class="topic-content">
+        <h2>4. Alinhamento Vertical (Align Items)</h2>
+        <p class="desc">Controla o comportamento no eixo cruzado (Vertical). Propriedade: <code>align-items</code>.</p>
 
-    <h3>Flex-Start (Topo / Início)</h3>
-    <p>Alinha os itens no topo do container. (Útil para evitar que eles estiquem).</p>
-    <pre><code>.container {
-  display: flex;
-  /* Altura necessária para ver o efeito */
-  height: 200px;
-  <span class="highlight">align-items: flex-start;</span>
-}</code></pre>
-    <div class="demo-container flex-active ai-start">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Flex-Start (Topo)</h3>
+        <pre><code>.container { height: 200px; <span class="highlight">align-items: flex-start;</span> }</code></pre>
+        <div class="demo-container flex-active ai-start">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
 
-    <h3>Center (Centro Vertical)</h3>
-    <p>Alinha os itens no meio da altura disponível.</p>
-    <pre><code>.container {
-  display: flex;
-  height: 200px; 
-  <span class="highlight">align-items: center;</span>
-}</code></pre>
-    <div class="demo-container flex-active ai-center">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Center (Meio)</h3>
+        <div class="demo-container flex-active ai-center" style="min-height: 150px">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
 
-    <h3>Flex-End (Base / Fundo)</h3>
-    <p>Empurra os itens para a parte de baixo.</p>
-    <pre><code>.container {
-  display: flex;
-  height: 200px;
-  <span class="highlight">align-items: flex-end;</span>
-}</code></pre>
-    <div class="demo-container flex-active ai-end">
-      <div class="item">1</div>
-      <div class="item">2</div>
-      <div class="item">3</div>
-    </div>
+        <h3>Flex-End (Base)</h3>
+        <div class="demo-container flex-active ai-end" style="min-height: 150px">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- SEÇÃO 5 -->
-    <h2>5. Centralização Total</h2>
-    <p class="desc">Combinando horizontal e vertical para centralizar um elemento perfeitamente.</p>
-    <pre><code>.container {
+    <!-- TÓPICO 5 -->
+    <section class="topic">
+      <div class="topic-content">
+        <h2>5. Centralização Total</h2>
+        <p class="desc">O Santo Graal do CSS: Alinhamento perfeito nos dois eixos.</p>
+        <pre><code>.container {
   display: flex;
   height: 300px;
-  <span class="highlight">justify-content: center;</span> <span class="comment">/* Horizontal */</span>
-  <span class="highlight">align-items: center;</span>     <span class="comment">/* Vertical */</span>
+  <span class="highlight">justify-content: center;</span>
+  <span class="highlight">align-items: center;</span>
 }</code></pre>
-    <div class="demo-container flex-active jc-center ai-center" style="height: 300px">
-      <div class="item" style="background-color: #e74c3c; width: 150px; height: 100px">Centro</div>
-    </div>
+        <div class="demo-container flex-active jc-center ai-center" style="height: 300px">
+          <div class="item" style="background-color: #e74c3c; width: 150px; height: 100px">Centro</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- --- PARTE PRÁTICA (CASOS DE USO) --- -->
-
-    <h1 style="margin-top: 100px">Casos de Uso Reais</h1>
-    <p style="text-align: center">Como aplicamos isso no dia a dia?</p>
+    <!-- CASOS DE USO -->
+    <section class="topic" style="background-color: #2c3e50; color: #ecf0f1">
+      <div class="topic-content">
+        <h1 style="color: #fff">Casos de Uso Reais</h1>
+        <p style="text-align: center; opacity: 0.8">Abaixo, exemplos práticos aplicados.</p>
+      </div>
+    </section>
 
     <!-- CASO 1 -->
-    <h2>Caso 1: Fileira de Cards com Space-Between</h2>
-    <p class="desc">Aqui usamos <code>justify-content: space-between</code>. Ele joga o primeiro card para o canto esquerdo, o último para o direito e distribui o espaço restante no meio, criando um grid perfeito sem margens laterais sobrando.</p>
+    <section class="topic">
+      <div class="topic-content">
+        <h2>Caso 1: Cards com Space-Between</h2>
+        <p class="desc">Um grid perfeito sem margens sobrando nas laterais.</p>
 
-    <pre><code>.lista-cards {
-  display: flex;
-  <span class="highlight">justify-content: space-between;</span>
-  /* gap não é necessário aqui pois o space-between cuida disso */
-}</code></pre>
+        <pre><code>.lista-cards { <span class="highlight">justify-content: space-between;</span> }</code></pre>
 
-    <div class="demo-container" style="display: flex; align-items: center">
-      <div class="card-row" style="width: 100%">
-        <!-- Card 1 -->
-        <div class="product-card">
-          <div>
-            <div class="p-img" style="background: #e74c3c"></div>
-            <div class="p-title">Produto A</div>
-            <p style="color: #666; font-size: 0.9em">Edição Limitada</p>
-          </div>
-          <div>
-            <div class="p-price">R$ 150</div>
-            <button class="p-btn" style="width: 100%">Ver</button>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="product-card">
-          <div>
-            <div class="p-img" style="background: #3498db"></div>
-            <div class="p-title">Produto B</div>
-            <p style="color: #666; font-size: 0.9em">Mais vendido</p>
-          </div>
-          <div>
-            <div class="p-price">R$ 200</div>
-            <button class="p-btn" style="width: 100%">Ver</button>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="product-card">
-          <div>
-            <div class="p-img" style="background: #f1c40f"></div>
-            <div class="p-title">Produto C</div>
-            <p style="color: #666; font-size: 0.9em">Lançamento</p>
-          </div>
-          <div>
-            <div class="p-price">R$ 350</div>
-            <button class="p-btn" style="width: 100%">Ver</button>
+        <div class="demo-container" style="display: flex; align-items: center">
+          <div class="card-row" style="width: 100%">
+            <div class="product-card">
+              <div>
+                <div class="p-img" style="background: #e74c3c"></div>
+                <div class="p-title">Produto A</div>
+              </div>
+              <div>
+                <div class="p-price">R$ 150</div>
+                <button class="p-btn" style="width: 100%">Ver</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div>
+                <div class="p-img" style="background: #3498db"></div>
+                <div class="p-title">Produto B</div>
+              </div>
+              <div>
+                <div class="p-price">R$ 200</div>
+                <button class="p-btn" style="width: 100%">Ver</button>
+              </div>
+            </div>
+            <div class="product-card">
+              <div>
+                <div class="p-img" style="background: #f1c40f"></div>
+                <div class="p-title">Produto C</div>
+              </div>
+              <div>
+                <div class="p-price">R$ 350</div>
+                <button class="p-btn" style="width: 100%">Ver</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- CASO 2 -->
-    <h2>Caso 2: Layout Alternado (Zig-Zag)</h2>
-    <p class="desc">Muito comum em sites de apresentação. No segundo container, usamos <code>flex-direction: row-reverse</code> para inverter a ordem visual (Imagem na esquerda) sem mexer no HTML.</p>
+    <section class="topic">
+      <div class="topic-content">
+        <h2>Caso 2: Zig-Zag (Row-Reverse)</h2>
+        <p class="desc">Inverter a ordem visual sem mexer no HTML.</p>
 
-    <pre><code>/* Container Normal */
-.container { display: flex; flex-direction: row; }
+        <pre><code>.invertido { <span class="highlight">flex-direction: row-reverse;</span> }</code></pre>
 
-/* Container Invertido */
-.container-invertido { display: flex; <span class="highlight">flex-direction: row-reverse;</span> }</code></pre>
-
-    <div style="border: 2px dashed #ccc; padding: 20px; background: #f9f9f9">
-      <!-- Linha 1 -->
-      <div class="feature-container">
-        <div class="feature-text">
-          <h3>Texto na Esquerda</h3>
-          <p>O texto vem primeiro no código e aparece na esquerda.</p>
-        </div>
-        <div class="feature-img">Imagem</div>
-      </div>
-
-      <!-- Linha 2 -->
-      <div class="feature-container reverse">
-        <div class="feature-text">
-          <h3>Texto na Direita (Invertido)</h3>
-          <p>Graças ao row-reverse, este texto (que vem primeiro no código) vai para o fim da linha.</p>
-        </div>
-        <div class="feature-img">Imagem</div>
-      </div>
-    </div>
-
-    <!-- CASO 3 -->
-    <h2>Caso 3: Navbar (Logo e Links)</h2>
-    <p class="desc">O padrão clássico de menus: Logo em uma ponta, links na outra. Conseguimos isso com <code>justify-content: space-between</code>.</p>
-
-    <pre><code>.navbar {
-  display: flex;
-  <span class="highlight">justify-content: space-between;</span>
-  align-items: center;
-}</code></pre>
-
-    <nav class="navbar-demo">
-      <div style="font-weight: bold; font-size: 1.5em">MinhaLogo</div>
-
-      <!-- Os links também são um flex container para ficarem lado a lado -->
-      <ul class="nav-links">
-        <li>Home</li>
-        <li>Sobre</li>
-        <li>Contato</li>
-      </ul>
-    </nav>
-
-    <!-- CASO 4 -->
-    <h2>Caso 4: Card de Produto (Vertical)</h2>
-    <p class="desc">Dentro de um card, geralmente queremos os itens um embaixo do outro (Coluna). Usamos <code>justify-content: space-between</code> para garantir que o botão sempre fique no final do card, mesmo que o texto seja curto.</p>
-
-    <pre><code>.card-produto {
-  display: flex;
-  <span class="highlight">flex-direction: column;</span>
-  <span class="highlight">justify-content: space-between;</span>
-  height: 350px;
-}</code></pre>
-
-    <div style="background: #f0f3f4; padding: 30px; border: 2px dashed #ccc">
-      <div class="product-card">
-        <div>
-          <div class="p-img"></div>
-          <!-- Imagem Fake -->
-          <div class="p-title">Tênis Esportivo Flex</div>
-          <p style="color: #666; font-size: 0.9em; margin-top: 5px">Super confortável para corridas.</p>
-        </div>
-
-        <!-- Esta parte vai para o fundo graças ao space-between -->
-        <div>
-          <div class="p-price">R$ 299,90</div>
-          <button class="p-btn" style="width: 100%">Comprar Agora</button>
+        <div style="border: 2px dashed #ccc; padding: 20px; background: #fff">
+          <div class="feature-container">
+            <div class="feature-text">
+              <h3>Normal</h3>
+              <p>Texto vem primeiro.</p>
+            </div>
+            <div class="feature-img">IMG</div>
+          </div>
+          <div class="feature-container reverse">
+            <div class="feature-text">
+              <h3>Invertido</h3>
+              <p>O texto continua primeiro no HTML!</p>
+            </div>
+            <div class="feature-img">IMG</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <footer style="text-align: center; margin-top: 80px; color: #999">
+    <!-- CASO 3 & 4 (Agrupados para finalizar) -->
+    <section class="topic">
+      <div class="topic-content">
+        <h2>Caso 3: Navbar</h2>
+        <p class="desc">Logos e Links separados extremos.</p>
+        <nav class="navbar-demo">
+          <div style="font-weight: bold">Logo</div>
+          <ul class="nav-links">
+            <li>Home</li>
+            <li>Sobre</li>
+          </ul>
+        </nav>
+
+        <h2 style="margin-top: 50px">Caso 4: Card Vertical</h2>
+        <p class="desc">Botão sempre no rodapé com <code>space-between</code> vertical.</p>
+        <div class="product-card" style="margin: 0 auto; height: 300px">
+          <div>
+            <div class="p-img"></div>
+            <div class="p-title">Item Flex</div>
+            <p style="font-size: 0.8em; color: #666">Conteúdo variável...</p>
+          </div>
+          <button class="p-btn">Comprar</button>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #222; color: #777">
       <p>Guia de Flexbox - Feito para aprendizado.</p>
     </footer>
   </body>
