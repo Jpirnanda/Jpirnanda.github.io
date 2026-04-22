@@ -1,0 +1,19 @@
+# Ignore DB dumps and local secrets
+dump.rdb
+*.rdb
+Convite/dump.rdb
+Convite/dump.rdb.lock
+
+# Ignore files with PII or API keys
+Convite/js/lista.js
+Fichas/fetch.js
+Fichas/fetch copy.js
+
+# Environment files
+*.env
+.env.local
+
+# Node / OS
+node_modules/
+Thumbs.db
+*.log
