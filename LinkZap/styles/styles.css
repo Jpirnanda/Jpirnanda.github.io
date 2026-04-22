@@ -6,8 +6,8 @@ body {
 }
 
 body::before {
-  content: '';
-  background-image: url('/LinkZap/src/bg.jfif');
+  content: "";
+  background-image: url("LinkZap/src/bg.jfif");
   background-size: 100%;
   background-repeat: no-repeat;
   position: fixed;
@@ -20,7 +20,7 @@ body::before {
 }
 
 h1 {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-weight: lighter;
   font-size: 12vh;
   color: #000;
@@ -34,9 +34,9 @@ h1 {
   width: 500px;
   height: 50px;
   font-size: 19px;
-  font-family: 'Circe', sans-serif;
+  font-family: "Circe", sans-serif;
   color: #333;
-  background-color: #fefefe;
+  background-color: transparent;
   border-radius: 25px;
   border: 5px solid #36897f;
   display: block;
@@ -67,7 +67,6 @@ h1 {
   align-items: center;
 }
 
-
 #link-input::placeholder {
   color: #999;
 }
@@ -77,7 +76,7 @@ h1 {
 }
 
 .logo {
-  font-family: 'Chewy', cursive;
+  font-family: "Chewy", cursive;
   font-weight: normal;
   font-size: 10vh;
   color: #000;
@@ -107,7 +106,7 @@ input::placeholder {
   border-radius: 25px;
   border: none;
   color: #fefefe;
-  font-family: 'Circe', sans-serif;
+  font-family: "Circe", sans-serif;
   font-size: 14px;
   padding: 2px 30px 2px;
   transition: background-color 0.3s ease-in-out;
@@ -119,7 +118,7 @@ input::placeholder {
 
 .custom-button::before,
 .custom-button::after {
-  content: '';
+  content: "";
 }
 
 .custom-button:hover {
@@ -146,18 +145,56 @@ input::placeholder {
   width: 50%;
 }
 
-#short-url {
-  cursor: pointer;
+/* Link card shown after creating the short URL */
+.link-card {
+  display: inline-block; /* shrink-to-fit according to link width */
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 95vw; /* garante que não ultrapasse a viewport */
+  margin: 20px auto; /* centraliza corretamente */
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 3px solid #36897f;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0 auto;
-  color: blue;
-  text-decoration: underline;
+  position: relative;
+  z-index: 99999; /* garante ficar acima de SVGs/imagens */
 }
 
-#short-url:hover {
+.link-text {
+  display: inline-block;
+  color: #2b6c63;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+  white-space: nowrap; /* cresce conforme o texto */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.link-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.action-button {
   cursor: pointer;
+  background-color: #36897f;
+  border-radius: 20px;
+  border: none;
+  color: #fefefe;
+  font-family: "Circe", sans-serif;
+  font-size: 14px;
+  padding: 6px 16px;
+  transition: background-color 0.2s ease-in-out;
+  height: 36px;
+}
+
+.action-button:hover {
+  background-color: #2b6c63;
 }
 
 .spinner-overlay {
@@ -283,14 +320,14 @@ select {
   appearance: none;
   /* Para outros navegadores */
 
-  background-color: white;
+  background-color: transparent;
 }
 
 #drop-list {
   width: auto;
   height: 50px;
   font-size: 19px;
-  font-family: 'Circe', sans-serif;
+  font-family: "Circe", sans-serif;
   color: #333;
   background-color: #fefefe;
   border-radius: 25px 0px 0px 25px;
@@ -300,7 +337,6 @@ select {
 
 /* Estilos para telas menores que 768px */
 @media only screen and (max-width: 768px) {
-
   /* Remove o margin-top do span.logo */
   .logo {
     margin-top: 0;
@@ -320,7 +356,6 @@ select {
     width: 90%;
   }
 
-
   /* Ajusta a largura do input#link-input2 */
   #link-input2 {
     width: 55%;
@@ -332,8 +367,8 @@ select {
   }
 
   body::before {
-    content: '';
-    background-image: url('https://techhub.dev.br/LinkZap/src/bg.jfif');
+    content: "";
+    background-image: url("https://techhub.dev.br/LinkZap/src/bg.jfif");
     height: 100%;
     background-repeat: repeat-y;
     top: 0;
@@ -400,6 +435,47 @@ select {
   #short-url::-webkit-scrollbar-thumb:hover {
     background: #555; /* Cor da parte rolável da scrollbar ao passar o mouse */
   }
+}
 
+/* Custom textarea scrollbar, resizer and appearance (WebKit) */
+#link-input {
+  background-color: transparent; /* fundo transparente */
+  min-height: 50px; /* garante espaço para 1 linha sem scroll */
+  height: auto;
+  line-height: 1.2;
+  overflow-y: auto;
+  resize: vertical; /* permite redimensionar verticalmente */
+}
 
+#link-input::-webkit-scrollbar {
+  width: 6px; /* mais fina */
+  height: 6px;
+}
+
+#link-input::-webkit-scrollbar-track {
+  background: transparent; /* mantém apenas a barra visível */
+}
+
+#link-input::-webkit-scrollbar-thumb {
+  background: #36897f; /* verdinho */
+  border-radius: 10px;
+}
+
+#link-input::-webkit-scrollbar-thumb:hover {
+  background: #2b6c63;
+}
+
+#link-input::-webkit-scrollbar-button {
+  background: transparent !important; /* setinhas/controles transparentes */
+  display: block;
+  height: 6px;
+}
+
+#link-input::-webkit-resizer {
+  background: transparent !important; /* resizer totalmente transparente */
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: none !important;
 }
